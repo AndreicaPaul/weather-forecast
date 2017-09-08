@@ -1,0 +1,133 @@
+<html>
+<head>  
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/weather-icons.css" rel="stylesheet" />
+    <link href="css/weather-icons.min.css" rel="stylesheet" />
+    <link href="css/weather-icons-wind.css" rel="stylesheet" />
+    <link href="css/weather-icons-wind.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+    <title></title>
+   
+</head>
+<body>
+        <div class="current_weather_container" id="background_container">
+          <div class="widget_title">
+                <h2 class="actual_title">Weather Forecast</h2>
+            </div>
+
+            <div class="current_weather_value_display">
+                <div class="main_weather_value">
+                <p id="main_weather_value_display">N/A</p>
+                </div>
+
+                <div class="visual_descritpion_icon">
+                    <i class="wi wi-na" id="weather_image"></i>
+                </div>
+
+                <div class="word_description">
+                    <p id="word_description">N/A</p>
+                </div>
+            </div>
+           
+            <div class="location_picker">
+                <span class="arr"></span>
+                <select id="myList">
+                    <option value="1" class="first">Cluj-Napoca</option>
+                    <option value="2" class="second">Bucharest</option>
+                    <option value="3" class="third">New York</option>
+                    <option value="4" class="fourth">London</option>
+                    <option value="5" class="fifth">Berlin</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="weather_details_container">
+            <div class="todays_weather_container">
+                <div class="today">TODAY</div>
+                <div class="today_weather_image">
+                    <i class="wi wi-na" id="weather_image_in_details">
+                    </i>
+                </div>
+                <div class="today_temperature" id="today_temperature_in_details">
+                    N/A
+                </div>
+                <div class="today_temperature_word_description" id="word_description_in_details">
+                    N/A
+                </div>
+            </div>
+
+            <div class="forecast_container">
+                <div class="one">
+                    <div class="day_of_week">
+                        Tomorrow
+                    </div>
+                    <div class="day_of_week_weather_image">
+                        <i class="wi wi-day-sunny" id="day_of_week_weather_image"></i>
+                    </div>
+                    <div class="day_of_week_weather_value">
+                        18°
+                    </div>
+                </div>
+                <div class="two">
+                    <div class="day_of_week">
+                        Mon
+                    </div>
+                    <div class="day_of_week_weather_image">
+                        <i class="wi wi-day-sunny" id="day_of_week_weather_image"></i>
+                    </div>
+                    <div class="day_of_week_weather_value">
+                        18°
+                    </div>
+                </div>
+                <div class="three">
+                    <div class="day_of_week">
+                        Mon
+                    </div>
+                    <div class="day_of_week_weather_image">
+                        <i class="wi wi-day-sunny" id="day_of_week_weather_image"></i>
+                    </div>
+                    <div class="day_of_week_weather_value">
+                        18°
+                    </div>
+                </div>
+                <div class="four">
+                    <div class="day_of_week">
+                        Mon
+                    </div>
+                    <div class="day_of_week_weather_image">
+                        <i class="wi wi-day-sunny" id="day_of_week_weather_image"></i>
+                    </div>
+                    <div class="day_of_week_weather_value">
+                        18°
+                    </div>
+                </div>
+                <div class="five">
+                    <div class="day_of_week">
+                        Mon
+                    </div>
+                    <div class="day_of_week_weather_image">
+                        <i class="wi wi-day-sunny" id="day_of_week_weather_image"></i>
+                    </div>
+                    <div class="day_of_week_weather_value">
+                        18°
+                    </div>
+                </div>
+                <div class="six">
+                    <div class="day_of_week">
+                        Mon
+                    </div>
+                    <div class="day_of_week_weather_image">
+                        <i class="wi wi-day-sunny" id="day_of_week_weather_image"></i>
+                    </div>
+                    <div class="day_of_week_weather_value">
+                        18°
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

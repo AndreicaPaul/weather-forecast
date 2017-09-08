@@ -1,0 +1,237 @@
+body{
+    background-color: lightgray;
+    font-family: 'Roboto' , sans-serif;
+    font-weight:bold;
+}
+
+.current_weather_container {
+    margin: auto;
+    position: relative;
+    height: 300px;
+    width: 870px;
+    background-size: 100% 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.widget_title{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    color: white;
+    font-size: 10px;
+    padding: 20px;
+}
+
+.current_weather_value_display {
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    font-weight:100;
+}
+
+
+.main_weather_value {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    font-size: 70px;
+    padding: 0px 20px;
+}
+.visual_descritpion_icon {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    padding: 0px 20px;
+    color:gold;
+}
+
+.word_description {
+    position: absolute;
+    top: 130px;
+    left: 50px;
+    padding: 0px 20px;
+}
+
+.location_picker {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    padding: 20px;
+}
+
+select {
+    border: 0px;
+    width: 150px;
+    height: 40px;
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    align-items: center;
+    white-space: pre;
+    color: white;
+    background-color: rgba(255,255,255,0.3);
+    cursor: default;
+    border-radius: 50px;
+    text-indent: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing:1px;
+}
+
+select:focus{
+    outline:none
+}
+
+option {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    color: black;
+}
+
+.arr {
+    background: rgba(0,0,0,0);
+    bottom: 5px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 50px;
+    pointer-events: none;
+}
+
+.arr:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 24px;
+        margin-top: -5px;
+        pointer-events: none;
+        border-top: 7px solid #FFF;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+}
+
+.weather_details_container {
+    margin: auto;
+    position: relative;
+    height: 120px;
+    width: 870px;
+    border-radius: 0px 0px 5px 5px;
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    color: #cbcbcb;
+}
+
+.today {
+    position: relative;
+    padding: 20px;
+    color: #22aef8;
+}
+
+.today_weather_image {
+    position: relative;
+    padding-left: 30px;
+    color: gold;
+}
+
+.today_temperature {
+    position: absolute;
+    left: 70px;
+    top: 50px;
+    color: #828282;
+    font-size: 30px;
+}
+
+.today_temperature_word_description {
+    position: absolute;
+    left: 70px;
+    top: 90px;
+}
+
+.one {
+    position: absolute;
+    top: 30px;
+    left: 265px;
+    padding: 0px 15px;
+    text-align: center;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    width: 69px;
+    line-height:30px;
+}
+
+.one i {
+    color: #22aef8;
+}
+
+.two {
+    position: absolute;
+    top: 30px;
+    left: 365px;
+    padding: 0px 15px;
+    text-align: center;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    width: 69px;
+    line-height: 30px;
+}
+
+.two i {
+    color: #22aef8;
+}
+
+.three {
+    position: absolute;
+    top: 30px;
+    left: 465px;
+    padding: 0px 15px;
+    text-align: center;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    width: 69px;
+    line-height: 30px;
+}
+
+.three i {
+    color: #22aef8;
+}
+
+.four {
+    position: absolute;
+    top: 30px;
+    left: 565px;
+    padding: 0px 15px;
+    text-align: center;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    width: 69px;
+    line-height: 30px;
+}
+
+.four i {
+    color: #22aef8;
+}
+
+.five {
+    position: absolute;
+    top: 30px;
+    left: 665px;
+    padding: 0px 15px;
+    text-align: center;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    width: 69px;
+    line-height: 30px;
+}
+
+.five i {
+    color: #22aef8;
+}
+
+.six {
+    position: absolute;
+    top: 30px;
+    left: 765px;
+    padding: 0px 15px;
+    text-align: center;
+    border-left: 1px solid rgba(128, 128, 128, 0.3);
+    width: 69px;
+    line-height: 30px;
+}
+
+.six i {
+    color: #22aef8;
+}
