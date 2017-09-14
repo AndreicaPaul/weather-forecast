@@ -1,6 +1,6 @@
-
 //Constants
 const myAPI = 'ee984a64f0776301d789b07e922c4cbf ';
+const baseUrls = ['http://api.openweathermap.org/data/2.5/', '&units=metric&appid=']; 
 
 //Views
 var currentMainWeatherValue = document.getElementById('main_weather_value_display');
@@ -23,22 +23,12 @@ var currentWeatherWordDescriptionActual = 'N/A';
 var currentWeatherImageId = '';
 
 //Weekdays name array
-var weekday = new Array(7);
-weekday[0] = "Sun";
-weekday[1] = "Mon";
-weekday[2] = "Tue";
-weekday[3] = "Wed";
-weekday[4] = "Thu";
-weekday[5] = "Fri";
-weekday[6] = "Sat";
+const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 //URL Array
-var urlList = new Array(5);
-urlList[0] = 'url(https://images.pexels.com/photos/434203/pexels-photo-434203.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb)';//Cluj
-urlList[1] = 'url(https://images.pexels.com/photos/427679/pexels-photo-427679.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb)';//London
-urlList[2] = 'url(https://images.pexels.com/photos/219692/pexels-photo-219692.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb)';//Bucharest
-urlList[3] = 'url(https://images.pexels.com/photos/534757/pexels-photo-534757.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb)';//New York
-urlList[4] = 'url(https://images.pexels.com/photos/275202/pexels-photo-275202.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb)';//Berlin
+const urlList = "434203,427679,219692,534757,275202".split( "," ).map( ( id ) => {
+    return `url(https://images.pexels.com/photos/${ id }/pexels-photo-${ id }.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb)`;
+} );
 
 //Our custom weekdays array
 var ourWeekDays = new Array(5);
@@ -58,26 +48,23 @@ dropDownList.onchange = function () {
 
 function getWeatherForCity() {
 
-    //Current day weather
-    var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + selectedCity + '&units=metric&appid=' + myAPI;
-    $.getJSON(apiCall, weatherCallBack);
+    //Weather Calls
+    getWeatherForToday();
+    getWeatherForecast();
+}
 
-    function weatherCallBack(weatherData) {
-        currentTemperature = Math.round(weatherData.main.temp);
-        currentWeatherWordDescriptionActual = weatherData.weather[0].main;
-        currentWeatherImageId = weatherData.weather[0].id;
-        imageClass = 'wi-owm-' + currentWeatherImageId;
-        updateViewsForToday();
-    }
+function getWeatherForToday() {
+
+    //Current day weather
+    var apiCall = baseUrls[0] + 'weather?q=' + selectedCity + baseUrls[1] + myAPI;
+    $.getJSON(apiCall, weatherCallBack);   
+}
+
+function getWeatherForecast() {
 
     //5 day forecast
-    var apiCall = 'http://api.openweathermap.org/data/2.5/forecast?q=' + selectedCity + '&units=metric&appid=' + myAPI;
+    var apiCall = baseUrls[0] + 'forecast?q=' + selectedCity + baseUrls[1] + myAPI;
     $.getJSON(apiCall, forecastCallBack)
-
-    function forecastCallBack(weatherData) {
-        updateForecastWeatherData(weatherData);
-        updateForecastDays();
-    }
 }
 
 function updateViewsForToday() {
@@ -187,4 +174,18 @@ function updateBackground(city) {
             backgroundContainer.style.backgroundImage = urlList[1];
         }
     }
+}
+
+//Callbacks
+function weatherCallBack(weatherData) {
+    currentTemperature = Math.round(weatherData.main.temp);
+    currentWeatherWordDescriptionActual = weatherData.weather[0].main;
+    currentWeatherImageId = weatherData.weather[0].id;
+    imageClass = 'wi-owm-' + currentWeatherImageId;
+    updateViewsForToday();
+}
+
+function forecastCallBack(weatherData) {
+    updateForecastWeatherData(weatherData);
+    updateForecastDays();
 }
